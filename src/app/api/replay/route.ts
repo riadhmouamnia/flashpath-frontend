@@ -284,11 +284,9 @@ async function handleInputEvent(page: Page, event: InputKeyEvent) {
       page
         .locator(`[name="${event.inputName}"]`)
         .pressSequentially(event.inputValue, { delay: 200 });
-      data.push(
-        `page.locator(`[
-          (name = "${event.inputName}")
-        ]`).pressSequentially(${event.inputValue}, { delay: 200 });`
-      );
+      // data.push(
+      //   `page.locator(`[name = ${event.inputName}]`).pressSequentially(${event.inputValue}, { delay: 200 })`
+      // );
     }
     // // Fill the input
     // await locator.fill(event.inputValue);
