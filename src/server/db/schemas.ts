@@ -2,6 +2,7 @@ import { is, relations, sql } from "drizzle-orm";
 import {
   boolean,
   index,
+  integer,
   json,
   numeric,
   pgTable,
@@ -126,6 +127,22 @@ export const interactionsRelations = relations(interactions, ({ one }) => ({
 export const notesRelations = relations(notes, ({ one }) => ({
   page: one(pages, {
     fields: [notes.pageId],
+    references: [pages.id],
+  }),
+}));
+
+export const rrwebEvents = pgTable("rrweb_events", {
+  id: serial("id").primaryKey().notNull(),
+  pageId: serial("page_id")
+    .notNull()
+    .references(() => pages.id),
+  event: json("event").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const rrwebEventsRelations = relations(rrwebEvents, ({ one }) => ({
+  page: one(pages, {
+    fields: [rrwebEvents.pageId],
     references: [pages.id],
   }),
 }));
