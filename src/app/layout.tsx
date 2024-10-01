@@ -22,16 +22,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/rrweb@latest/dist/style.css"
+        />
+      </head> */}
       <body>
         <ClerkProvider signInUrl={signInUrl} signUpUrl={signUpUrl}>
           <QueryClientProvider client={queryClient}>
-            <header className="p-6 bg-slate-800 flex gap-4 justify-end">
+            <header className="p-6 border-b border-b-slate-800 flex gap-4 justify-end">
+              <div className="flex-1">
+                <Link className="text-xl font-bold" href="/">
+                  Flashpath.
+                </Link>
+              </div>
               <Link className="underline" href="/">
                 Home
               </Link>
-              <Link className="underline" href="/pages">
-                Pages (protected)
+              <Link className="underline" href="/paths">
+                All paths
               </Link>
+              {/* <Link className="underline" href="/signalR">
+                SignalR/Quix Demo
+              </Link>
+              <Link className="underline" href="/webSocket">
+                WebSocket/Quix Demo
+              </Link> */}
               <SignedOut>
                 <SignInButton />
               </SignedOut>

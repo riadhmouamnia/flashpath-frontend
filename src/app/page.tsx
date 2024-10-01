@@ -1,9 +1,9 @@
-import Link from "next/link";
+import AllUsers from "./_components/AllUsers";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Flashpath front-end
+    <main className="flex min-h-screen w-full flex-col items-center gap-20 p-8">
+      <AllUsers />
     </main>
   );
 }

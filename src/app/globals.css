@@ -31,3 +31,13 @@ body {
     text-wrap: balance;
   }
 }
+
+.rr-controller {
+  color: gray !important;
+}
+/* .rr-player {
+  height: 510px !important;
+}
+.rr-player__frame {
+  height: 500px !important;
+} */
