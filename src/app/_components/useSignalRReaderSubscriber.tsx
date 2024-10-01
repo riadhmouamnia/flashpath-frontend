@@ -35,7 +35,7 @@ export default function useSignalRReaderSubscriber({
         .build();
 
       let tempEvents: any[] = []; // Temporary array to collect events
-      let timer: NodeJS.Timeout; // Timer reference for the 10-second window
+      let timer: NodeJS.Timeout | null; // Timer reference for the 10-second window
 
       connection.start().then(() => {
         console.log("Connected to Quix.");
