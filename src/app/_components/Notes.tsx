@@ -39,7 +39,9 @@ function Notes({ pathId }: { pathId: number }) {
             className="p-4 bg-slate-700 hover:bg-slate-600 rounded-md"
           >
             <p>{note.body}</p>
-            <p className="text-sm font-light italic">url: {note.pageUrl}</p>
+            <p className="text-sm font-light italic text-ellipsis overflow-hidden">
+              url: {note.pageUrl}
+            </p>
           </Link>
         ))}
       </div>

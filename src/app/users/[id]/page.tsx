@@ -14,7 +14,6 @@ function UserDetails({ params }: { params: { id: string } }) {
   } = useQuery({
     queryKey: ["paths", id],
     queryFn: async () => await getPathsByUserId(id),
-    refetchOnWindowFocus: false,
   });
 
   if (isFetching)
