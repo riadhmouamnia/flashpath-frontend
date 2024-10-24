@@ -1,6 +1,6 @@
 "use client";
-import RealTimeRrwebPlayer from "@/app/_components/RealTimeRrwebPlayer";
-import useSignalRReaderSubscriber from "../../_components/useSignalRReaderSubscriber";
+import RealTimeRrwebPlayer from "@/components/RealTimeRrwebPlayer";
+import useSignalRReaderSubscriber from "../../../components/useSignalRReaderSubscriber";
 
 export default function Live() {
   const { event } = useSignalRReaderSubscriber({ username: "karma2" });

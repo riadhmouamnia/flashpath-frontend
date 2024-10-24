@@ -11,7 +11,7 @@ async function AllUsers() {
 
   return (
     <div className="w-full">
-      <p className="text-center">Flashbath by all users:</p>
+      <p className="text-center">Flashpath by all users:</p>
       <div className="p-4 flex gap-4 mx-auto max-w-2xl items-center justify-center flex-wrap">
         {users.data.map((user) => (
           <div className="p-4 bg-slate-800 rounded-md w-28" key={user.id}>

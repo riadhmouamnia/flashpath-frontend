@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import useSignalRReaderSubscriber from "../../_components/useSignalRReaderSubscriber";
+import useSignalRReaderSubscriber from "../../../components/useSignalRReaderSubscriber";
 import { useLayoutEffect, useRef } from "react";
 import rrwebPlayer from "rrweb-player";
 import "rrweb-player/dist/style.css";

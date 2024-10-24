@@ -84,3 +84,60 @@ type Interaction = {
   type: Event["type"];
   timestamp: string;
 };
+
+interface LinkPreviewResponse {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+}
+
+interface PathWithPages {
+  pages: {
+    url: string;
+    domain: string;
+  }[];
+  id: number;
+  createdAt: Date | null;
+  name: string;
+  userId: string;
+}
+
+type Note = {
+  id: number;
+  body: string;
+  startTime: Date | null;
+  endTime: Date | null;
+  tags: string[];
+  color: string | null;
+  favorite: boolean;
+  hidden: boolean;
+  sort: number | null;
+  createdAt: Date;
+};
+
+// Define the type for Pages
+type Page = {
+  id: number;
+  url: string;
+  domain: string;
+  timeOnPage: number | null;
+  isBookmarked: boolean | null;
+  createdAt: Date;
+  notes: Note[]; // Array of notes associated with this page
+};
+
+// Define the type for Paths
+type PathWithDetails = {
+  id: number;
+  name: string;
+  createdAt: Date | null;
+  userId: string;
+  pages: Page[]; // Array of pages associated with this path
+  numberOfPages: number; // Total number of pages
+  numberOfNotes: number; // Total number of notes across all pages
+};
+
+interface NoteWithPage extends Note {
+  pageUrl: string;
+}
